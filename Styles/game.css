@@ -1,0 +1,954 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Kanit", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+header {
+  background-color: rgb(34, 170, 73);
+  color: white;
+  height: 65px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0px 12px;
+}
+
+header ul {
+  list-style-type: none;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 10vw 10vw 10vw;
+  grid-template-rows: 10vw 10vw 10vw;
+  font-family: 'Roboto', san-serif;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  font-size: 6vw;
+  cursor: pointer;
+}
+
+.box:hover {
+  background-color: rgba(67, 12, 33, 0.762);
+  /* background-color: rgba(188, 32, 32, 0.762); */
+  color: white;
+}
+
+.button-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vw;
+  width: 8vw;
+  font-size: 8vw;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+/* Mobile Devices */
+@media (max-width: 426px) {
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.2rem;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 12vh 12vh 12vh;
+    grid-template-rows: 12vh 12vh 12vh;
+    font-family: 'Roboto', san-serif;
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    font-size: 6vw;
+    cursor: pointer;
+  }
+
+  .box:hover {
+    background-color: rgba(67, 12, 33, 0.762);
+    /* background-color: rgba(188, 32, 32, 0.762); */
+    color: white;
+  }
+
+  .button-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vw;
+    width: 10vw;
+    font-size: 3rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+  }
+
+  .game-info {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-rows: 20vh 24vh;
+    width: 100vw;
+    height: 44vh;
+  }
+
+  .row1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .row2 {
+    display: grid;
+    grid-template-rows: 2vw;
+    justify-content: center;
+  }
+
+  .info-title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: rgb(212, 25, 212);
+  }
+
+  .turn-info {
+    display: grid;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+    color: rgb(223, 21, 95);
+  }
+
+  .turn-icon {
+    color: rgb(36, 227, 65);
+    font-size: 2rem;
+    justify-self: center;
+  }
+
+  .turn-player-name {
+    font-size: 1rem;
+    color: pink;
+  }
+
+  .result-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .win-player-icon {
+    color: rgb(36, 227, 65);
+    font-size: 2rem;
+    padding-right: 0.4rem;
+  }
+
+  .other-text {
+    color: rgb(223, 21, 95);
+    font-size: 1.8rem;
+  }
+
+  .win-player-name {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    color: pink;
+  }
+
+  .result-tie {
+    color: rgb(36, 227, 65);
+    font-size: 2rem;
+  }
+
+  .score-info {
+    margin-top: 0.5rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 25vw 25vw;
+    justify-content: center;
+    column-gap: 20vw;
+
+  }
+
+  .player-name {
+    display: flex;
+    justify-content: center;
+    color: pink;
+    font-size: 1.3rem;
+  }
+
+  .player-score-info {
+    display: flex;
+    justify-content: center;
+    color: rgb(36, 227, 65);
+  }
+
+  .menu-buttons {
+    display: grid;
+    grid-template-columns: 30vw 30vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-buttons-containers {
+    display: flex;
+    justify-content: center;
+  }
+
+  .new-game-btn,
+  .reset-score-btn {
+    /* width: 25vw; */
+    background-color: rgb(247, 247, 98);
+    border: none;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.2rem;
+    cursor: pointer;
+  }
+
+  .new-game-btn:hover,
+  .reset-score-btn:hover {
+    background-color: rgb(247, 98, 98);
+  }
+
+  .confirmation-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .text-confirm {
+    color: white;
+  }
+
+  .yes-btn,
+  .no-btn {
+    padding: 0.1rem 0.4rem;
+    /* border: 0.1rem solid white; */
+    border: none;
+    color: white;
+    background-color: red;
+    border-radius: 0.5rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 427px) and (max-width: 768px) {
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.2rem;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 12vh 12vh 12vh;
+    grid-template-rows: 12vh 12vh 12vh;
+    font-family: 'Roboto', san-serif;
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    font-size: 6vw;
+    cursor: pointer;
+  }
+
+  .box:hover {
+    background-color: rgba(67, 12, 33, 0.762);
+    /* background-color: rgba(188, 32, 32, 0.762); */
+    color: white;
+  }
+
+  .button-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vw;
+    width: 10vw;
+    font-size: 3rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+  }
+
+  .game-info {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-rows: 20vh 24vh;
+    width: 100vw;
+    height: 44vh;
+  }
+
+  .row1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .row2 {
+    display: grid;
+    grid-template-rows: 2vw;
+    justify-content: center;
+  }
+
+  .info-title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: rgb(212, 25, 212);
+  }
+
+  .turn-info {
+    display: grid;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+    color: rgb(223, 21, 95);
+  }
+
+  .turn-icon {
+    color: rgb(36, 227, 65);
+    font-size: 2rem;
+    justify-self: center;
+  }
+
+  .turn-player-name {
+    font-size: 1rem;
+    color: pink;
+  }
+
+  .result-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .win-player-icon {
+    color: rgb(36, 227, 65);
+    font-size: 2rem;
+    padding-right: 0.4rem;
+  }
+
+  .other-text {
+    color: rgb(223, 21, 95);
+    font-size: 1.8rem;
+  }
+
+  .win-player-name {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    color: pink;
+  }
+
+  .result-tie {
+    color: rgb(36, 227, 65);
+    font-size: 2rem;
+  }
+
+  .score-info {
+    margin-top: 0.5rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 25vw 25vw;
+    justify-content: center;
+    column-gap: 20vw;
+
+  }
+
+  .player-name {
+    display: flex;
+    justify-content: center;
+    color: pink;
+    font-size: 1.3rem;
+  }
+
+  .player-score-info {
+    display: flex;
+    justify-content: center;
+    color: rgb(36, 227, 65);
+  }
+
+  .menu-buttons {
+    display: grid;
+    grid-template-columns: 24vw 24vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-buttons-containers {
+    display: flex;
+    justify-content: center;
+  }
+
+  .new-game-btn,
+  .reset-score-btn {
+    /* width: 25vw; */
+    background-color: rgb(247, 247, 98);
+    border: none;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.2rem;
+    cursor: pointer;
+  }
+
+  .new-game-btn:hover,
+  .reset-score-btn:hover {
+    background-color: rgb(247, 98, 98);
+  }
+
+  .confirmation-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .text-confirm {
+    color: white;
+  }
+
+  .yes-btn,
+  .no-btn {
+    padding: 0.1rem 0.4rem;
+    /* border: 0.1rem solid white; */
+    border: none;
+    color: white;
+    background-color: red;
+    border-radius: 0.5rem;
+  }
+}
+
+/* Laptop (small) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.2rem;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 12vh 12vh 12vh;
+    grid-template-rows: 12vh 12vh 12vh;
+    font-family: 'Roboto', san-serif;
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    font-size: 6vw;
+    cursor: pointer;
+  }
+
+  .box:hover {
+    background-color: rgba(67, 12, 33, 0.762);
+    /* background-color: rgba(188, 32, 32, 0.762); */
+    color: white;
+  }
+
+  .button-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vw;
+    width: 10vw;
+    font-size: 3rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+  }
+
+  .game-info {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-rows: 20vh 24vh;
+    width: 100vw;
+    height: 44vh;
+  }
+
+  .row1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .row2 {
+    display: grid;
+    grid-template-rows: 2vw;
+    justify-content: center;
+  }
+
+  .info-title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: rgb(212, 25, 212);
+  }
+
+  .turn-info {
+    display: grid;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+    color: rgb(223, 21, 95);
+  }
+
+  .turn-icon {
+    color: rgb(36, 227, 65);
+    font-size: 2rem;
+    justify-self: center;
+  }
+
+  .turn-player-name {
+    font-size: 1rem;
+    color: pink;
+  }
+
+  .result-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .win-player-icon {
+    color: rgb(36, 227, 65);
+    font-size: 2rem;
+    padding-right: 0.4rem;
+  }
+
+  .other-text {
+    color: rgb(223, 21, 95);
+    font-size: 1.8rem;
+  }
+
+  .win-player-name {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    color: pink;
+  }
+
+  .result-tie {
+    color: rgb(36, 227, 65);
+    font-size: 2rem;
+  }
+
+  .score-info {
+    margin-top: 0.5rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 25vw 25vw;
+    justify-content: center;
+    column-gap: 20vw;
+
+  }
+
+  .player-name {
+    display: flex;
+    justify-content: center;
+    color: pink;
+    font-size: 1.3rem;
+  }
+
+  .player-score-info {
+    display: flex;
+    justify-content: center;
+    color: rgb(36, 227, 65);
+  }
+
+  .menu-buttons {
+    display: grid;
+    grid-template-columns: 24vw 24vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-buttons-containers {
+    display: flex;
+    justify-content: center;
+  }
+
+  .new-game-btn,
+  .reset-score-btn {
+    /* width: 25vw; */
+    background-color: rgb(247, 247, 98);
+    border: none;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.2rem;
+    cursor: pointer;
+  }
+
+  .new-game-btn:hover,
+  .reset-score-btn:hover {
+    background-color: rgb(247, 98, 98);
+  }
+
+  .confirmation-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .text-confirm {
+    color: white;
+  }
+
+  .yes-btn,
+  .no-btn {
+    padding: 0.1rem 0.4rem;
+    /* border: 0.1rem solid white; */
+    border: none;
+    color: white;
+    background-color: red;
+    border-radius: 0.5rem;
+  }
+}
+
+/* Laptop (medium) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .game-info {
+    margin-left: 1rem;
+    display: grid;
+    grid-template-rows: 16vw 10vw;
+    row-gap: 5.8rem;
+    grid-template-columns: 30vw;
+    font-family: 'Roboto', san-serif;
+  }
+
+  .row1 {
+    display: grid;
+    grid-template-rows: 8vw 8vw;
+    row-gap: 3.2rem;
+  }
+
+  .turn-container,
+  .result-container {
+    display: grid;
+    grid-template-rows: 2vw;
+    justify-content: center;
+  }
+
+  .info-title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.7rem;
+    color: rgb(212, 25, 212);
+  }
+
+  .turn-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(223, 21, 95);
+  }
+
+  .turn-icon {
+    margin-top: 1vw;
+    color: rgb(36, 227, 65);
+    font-size: 4.5vw;
+  }
+
+  .turn-player-name {
+    font-size: 1rem;
+    color: pink;
+  }
+
+  .result-display {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .win-player-icon {
+    color: rgb(36, 227, 65);
+    font-size: 2.8rem;
+    margin-right: 1rem;
+  }
+
+  .other-text {
+    color: rgb(223, 21, 95);
+    font-size: 2.4rem;
+  }
+
+  .win-player-name {
+    font-size: 0.9rem;
+    color: pink;
+  }
+
+  .result-tie {
+    color: rgb(36, 227, 65);
+    font-size: 2.8rem;
+  }
+
+  .row2 {
+    display: grid;
+    grid-template-rows: 2vw;
+    justify-content: center;
+  }
+
+  .score-info {
+    margin-top: 1.2rem;
+    display: grid;
+    grid-template-columns: 8vw 8vw;
+    column-gap: 2.5vw;
+  }
+
+  .player-name {
+    color: pink;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+  }
+
+  .player-score-info {
+    color: rgb(36, 227, 65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .menu-buttons {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    justify-content: center;
+  }
+
+  .new-game-btn,
+  .reset-score-btn {
+    background-color: rgb(247, 247, 98);
+    border: none;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.2rem;
+    cursor: pointer;
+  }
+
+  .new-game-btn:hover,
+  .reset-score-btn:hover {
+    background-color: rgb(247, 98, 98);
+  }
+
+  .confirmation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .text-confirm {
+    color: white;
+  }
+
+  .yes-btn,
+  .no-btn {
+    justify-content: center;
+    padding: 0.4rem;
+    border: 0.1rem solid white;
+    font-size: 1rem;
+    color: white;
+    background-color: red;
+    border-radius: 0.5rem;
+  }
+}
+
+/* Laptop (large) 4K */
+@media (min-width: 1441px) {
+  .game-info {
+    margin-left: 1rem;
+    padding: 0.6rem;
+    display: grid;
+    grid-template-rows: 16vw 10vw;
+    row-gap: 2.8rem;
+    grid-template-columns: 30vw;
+    font-family: 'Roboto', san-serif;
+  }
+
+  .row1 {
+    display: grid;
+    grid-template-rows: 8vw 8vw;
+    row-gap: 1.8rem;
+  }
+
+  .turn-container,
+  .result-container {
+    display: grid;
+    grid-template-rows: 2vw;
+    justify-content: center;
+    row-gap: 5px;
+  }
+
+  .info-title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.7rem;
+    color: rgb(212, 25, 212);
+  }
+
+  .turn-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(223, 21, 95);
+  }
+
+  .turn-icon {
+    color: rgb(36, 227, 65);
+    font-size: 3rem;
+  }
+
+  .turn-player-name {
+    font-size: 1rem;
+    color: pink;
+  }
+
+  .result-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .win-player-icon {
+    color: rgb(36, 227, 65);
+    font-size: 2.8rem;
+    margin-right: 1rem;
+  }
+
+  .other-text {
+    color: rgb(223, 21, 95);
+    font-size: 2.4rem;
+  }
+
+  .win-player-name {
+    font-size: 0.9rem;
+    color: pink;
+  }
+
+  .result-tie {
+    color: rgb(36, 227, 65);
+    font-size: 2.8rem;
+  }
+
+  .row2 {
+    display: grid;
+    grid-template-rows: 2vw;
+    justify-content: center;
+  }
+
+  .score-info {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 6vw 6vw;
+    column-gap: 2.5vw;
+    padding-left: 1rem;
+  }
+
+  .player-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: pink;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .player-score-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(36, 227, 65);
+  }
+
+  .menu-buttons {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    justify-content: center;
+  }
+
+  .new-game-btn,
+  .reset-score-btn {
+    background-color: rgb(247, 247, 98);
+    border: none;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.2rem;
+    cursor: pointer;
+  }
+
+  .new-game-btn:hover,
+  .reset-score-btn:hover {
+    background-color: rgb(247, 98, 98);
+  }
+
+  .confirmation-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .text-confirm {
+    color: white;
+  }
+
+  .yes-btn,
+  .no-btn {
+    justify-content: center;
+    padding: 0.1rem 0.4rem;
+    border: 0.1rem solid white;
+    color: white;
+    background-color: red;
+    border-radius: 0.5rem;
+  }
+}

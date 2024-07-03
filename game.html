@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game | Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="Styles/game.css">
+</head>
+
+<body>
+  <header>
+    <ul>
+      <li>
+        Tic-Tac-Toe Game
+      </li>
+    </ul>
+  </header>
+
+  <div class="game-container">
+    <div class="container">
+      <div class="box js-box" style="border-top: 0; border-left: 0;">
+        <button class="button-text js-btn-1" onclick="
+            playGame(1);
+          "></button>
+      </div>
+      <div class="box" style="border-top: 0;">
+        <button class="button-text js-btn-2" onclick="
+        playGame(2);
+      "></button>
+
+      </div>
+      <div class="box" style="border-top: 0; border-right: 0;">
+        <button class="button-text js-btn-3" onclick="
+        playGame(3);
+      "></button>
+
+      </div>
+      <div class="box" style="border-left: 0;">
+        <button class="button-text js-btn-4" onclick="
+        playGame(4);
+      "></button>
+
+      </div>
+      <div class="box">
+        <button class="button-text js-btn-5" onclick="
+        playGame(5);
+      "></button>
+
+      </div>
+      <div class="box" style="border-right: 0;">
+        <button class="button-text js-btn-6" onclick="
+        playGame(6);
+      "></button>
+
+      </div>
+      <div class="box" style="border-left: 0; border-bottom: 0;">
+        <button class="button-text js-btn-7" onclick="
+        playGame(7);
+      "></button>
+
+      </div>
+      <div class="box" style="border-bottom: 0;">
+        <button class="button-text js-btn-8" onclick="
+        playGame(8);
+      "></button>
+
+      </div>
+      <div class="box" style="border-bottom: 0; border-right: 0;">
+        <button class="button-text js-btn-9" onclick="
+        playGame(9);
+      "></button>
+
+      </div>
+    </div>
+
+    <div class="game-info">
+      <!-- here row1 and row2 is made just for mobile and is adjusts in desktop and other screen according to it's css -->
+      <div class="row1 turn-and-result-container">
+        <div class="game-info-container turn-container">
+          <div class="info-title">
+            <p>Turn</p>
+          </div>
+          <div class="turn-info">
+            <div class="js-turn-icon turn-icon"></div>
+            <div class="js-turn-player-name turn-player-name"></div>
+          </div>
+        </div>
+  
+        <div class="game-info-container result-container">
+          <div class="info-title">
+            <p>Result</p>
+          </div>
+          <div class="result-display js-result-display"></div>
+        </div>
+      </div>
+
+      <div class="row2 game-info-container score-container">
+        <div class="info-title">
+          <p>Score</p>
+        </div>
+        <div class="score-info">
+          <div class="player1-score">
+            <p class="player-name">Player 1</p>
+            <div class="js-score-info-player1"></div>
+          </div>
+          <div class="player2-score">
+            <p class="player-name">Player 2</p>
+            <div class="js-score-info-player2"></div>
+          </div>
+        </div>
+        <div class="menu-buttons js-menu-buttons">
+          <div class="menu-buttons-containers">
+            <button class="new-game-btn js-new-game-btn">Start Game</button>
+          </div>
+          <div class="menu-buttons-containers">
+            <button class="reset-score-btn js-reset-score-btn">Reset Score</button>
+          </div>
+        </div>
+        
+      </div>
+      <div class="confirmation-container js-confirmation"></div>
+    </div>
+  </div>
+
+  <script src="Scripts/game.js"></script>
+</body>
+
+</html>
